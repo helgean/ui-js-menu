@@ -1,0 +1,13 @@
+pop-menu:not(:focus-within) [role="menu"] {
+  display: none;
+}
+
+[role="menu"] {
+  display: block;
+  width: auto;
+  position: absolute;
+}
+
+[role="menuitem"] {
+  display: block;
+}
