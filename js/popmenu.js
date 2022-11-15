@@ -1,7 +1,8 @@
-customElements.define('pop-menu', class extends HTMLElement {
+export class PopMenu extends HTMLElement {
   connectedCallback() {
     this.setAttribute('tabindex', '0');
-    this.addEventListener('keydown', this.keydown);
+    this.addEventListener('keydown', ev => this.keydown(ev));
+    this.addEventListener('click', ev => this.action(ev.target));
   }
 
   keydown(ev) {
@@ -17,4 +18,16 @@ customElements.define('pop-menu', class extends HTMLElement {
     if (targetItem && targetItem.focus)
       targetItem.focus();
   }
-});
+
+  action(item) {
+    console.log(item);
+    this.dispatchEvent(new CustomEvent('pop-menu-action', {
+      bubbles: true,
+      detail: {
+        item: item
+      }
+    }));
+  }
+}
+
+customElements.define('pop-menu', PopMenu);
