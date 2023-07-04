@@ -1,0 +1,45 @@
+pop-menu:not(:focus-within) [role="menu"] {
+  display: none;
+}
+
+pop-menu [role="menu"] {
+  display: block;
+  width: auto;
+  position: absolute;
+  overflow: hidden;
+}
+
+pop-menu [role="menuitem"] {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+pop-menu [role="menu"] {
+  padding: 0;
+  background-color: var(--eyeshare-gray-control);
+  border-radius: 10px;
+  box-shadow: 1px 0 4px 0 var(--eyeshare-gray-shadow);
+  z-index: 2;
+}
+
+pop-menu [role="menu"] a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+  min-width: 100px;
+}
+
+pop-menu [role="menu"] a:focus-visible,
+pop-menu [role="menu"] a:hover {
+  background-color: lightblue;
+  outline: none;
+}
+
+pop-menu .menu-divider {
+    border-bottom: 1px solid var(--eyeshare-gray-border);
+
+}

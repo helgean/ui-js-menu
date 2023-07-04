@@ -6094,3 +6094,5 @@ node_modules/ylru/LICENSE
 node_modules/ylru/package.json
 node_modules/ylru/README.md
 test/popmenu.test.js
+
+node_modules/
